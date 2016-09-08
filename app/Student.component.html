@@ -1,0 +1,20 @@
+<div>
+    <h1>{{title}}</h1>
+   
+ <ul class="heroes">
+      <li *ngFor="#student of studentInfo"  [class.selected]="student === selectedStudent" (click)="onSelect(student)">
+        <span class="badge">{{student.StudentID}}</span> {{student.StudentFName}}  </li>
+    </ul>
+
+ <div *ngIf="selectedStudent">
+      <h2>{{selectedStudent.StudentFName}} details!</h2>
+      <div><label>id: </label>{{selectedStudent.StudentID}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedStudent.StudentFName" placeholder="name"/>
+        <input [(ngModel)]="selectedStudent.StudentLName" placeholder="name"/>
+        <input [(ngModel)]="selectedStudent.StudentFeesStatus" placeholder="name"/>
+       </div>
+    </div>
+</div>
+
